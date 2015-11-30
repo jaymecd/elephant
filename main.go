@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/jaymecd/elephant/domain/order"
+	"github.com/jaymecd/elephant/domain"
 )
 
 func main() {
-	order := NewOrder(123)
+	order := domain.NewOrder(123)
 
 	fmt.Printf("Order ID : %d\n", order.Id())
 }
