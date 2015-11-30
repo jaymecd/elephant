@@ -4,6 +4,12 @@ clean:
 	rm -f coverage.out
 	rm -f elephant
 
+# Checks project and source code if everything is according to standard
+.PHONY: check
+check:
+	gofmt -l . | read && echo "Code differs from gofmt's style" && exit 1 || true
+	go vet ./...
+
 test:
 	go test ./...
 #	go tool cover -func=coverage.out
