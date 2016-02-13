@@ -1,8 +1,13 @@
 default:
 
+# Cleans up directory and source code with gofmt
+.PHONY: clean
 clean:
 	rm -f coverage.out
 	rm -f elephant
+	go fmt ./...
+	gofmt -w .
+
 
 # Checks project and source code if everything is according to standard
 .PHONY: check
